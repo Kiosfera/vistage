@@ -172,7 +172,7 @@ export default function PreferencesForm({ onSubmit }: PreferencesFormProps) {
                     {palette.colors.map((color, index) => (
                       <div
                         key={index}
-                        className="w-6 h-6 rounded-full border-2 border-white shadow-sm"
+                        className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 rounded-full border-2 border-white shadow-sm"
                         style={{ backgroundColor: color }}
                       />
                     ))}
