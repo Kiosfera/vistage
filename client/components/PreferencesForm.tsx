@@ -154,7 +154,7 @@ export default function PreferencesForm({ onSubmit }: PreferencesFormProps) {
           <Palette className="w-5 h-5" />
           Paleta de Cores Preferida
         </Label>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {colorPalettes.map((palette) => (
             <Card
               key={palette.id}
