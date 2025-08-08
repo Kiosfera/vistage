@@ -231,7 +231,7 @@ export default function Index() {
         <div className="max-w-2xl mx-auto">
           <Card className="border-0 shadow-lg">
             <CardHeader className="text-center pb-6">
-              <CardTitle className="text-xl font-semibold">
+              <CardTitle className="text-xl font-accent font-medium tracking-wide">
                 {steps[currentStep - 1].title}
               </CardTitle>
               <p className="text-muted-foreground">
