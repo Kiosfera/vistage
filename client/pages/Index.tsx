@@ -270,7 +270,7 @@ export default function Index() {
                 {steps[currentStep - 1].description}
               </p>
             </CardHeader>
-            <CardContent className="pt-0 px-4 sm:px-6 pb-4 sm:pb-6">
+            <CardContent className="pt-0 px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8">
               {renderStepContent()}
             </CardContent>
           </Card>
