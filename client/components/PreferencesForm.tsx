@@ -166,7 +166,7 @@ export default function PreferencesForm({ onSubmit }: PreferencesFormProps) {
               )}
               onClick={() => setSelectedPalette(palette.id)}
             >
-              <CardContent className="p-4">
+              <CardContent className="p-3 sm:p-4 lg:p-5">
                 <div className="flex items-center space-x-3">
                   <div className="flex space-x-1">
                     {palette.colors.map((color, index) => (
