@@ -1,8 +1,8 @@
-import React from 'react';
-import { ArrowLeft } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import AIStyleAssistant from '@/components/AIStyleAssistant';
+import React from "react";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import AIStyleAssistant from "@/components/AIStyleAssistant";
 
 export default function AIAssistant() {
   return (
