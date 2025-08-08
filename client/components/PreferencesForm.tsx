@@ -241,7 +241,7 @@ export default function PreferencesForm({ onSubmit }: PreferencesFormProps) {
           <Star className="w-5 h-5" />
           Ocasiões Principais
         </Label>
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
+        <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3">
           {occasions.map((occasion) => (
             <Card
               key={occasion.id}
