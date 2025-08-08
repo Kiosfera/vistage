@@ -40,6 +40,12 @@ const steps = [
     description: 'Sua análise facial personalizada',
     icon: Check,
   },
+  {
+    id: 6,
+    title: 'Assistente IA',
+    description: 'Converse com sua consultora virtual',
+    icon: Camera, // We'll import MessageCircle icon
+  },
 ];
 
 export default function Index() {
