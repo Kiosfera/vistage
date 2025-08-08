@@ -99,11 +99,11 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
   return (
     <div className="space-y-6">
       <div className="text-center mb-6">
-        <Camera className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h3 className="text-xl font-accent font-medium mb-2 tracking-wide">
+        <Camera className="w-12 h-12 sm:w-16 sm:h-16 text-primary mx-auto mb-4" />
+        <h3 className="text-lg sm:text-xl font-accent font-medium mb-2 tracking-wide">
           Faça upload da sua foto
         </h3>
-        <p className="text-muted-foreground">
+        <p className="text-sm sm:text-base text-muted-foreground px-2">
           Escolha uma foto clara do seu rosto para uma análise mais precisa
         </p>
       </div>
@@ -111,7 +111,7 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
       {!selectedFile ? (
         <div
           className={cn(
-            "border-2 border-dashed rounded-xl p-8 text-center transition-colors cursor-pointer",
+            "border-2 border-dashed rounded-xl p-6 sm:p-8 text-center transition-colors cursor-pointer",
             isDragging
               ? "border-primary bg-primary/5"
               : "border-border hover:border-primary/50 hover:bg-accent/50",
@@ -121,9 +121,9 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
           onDragLeave={handleDragLeave}
           onClick={openFileDialog}
         >
-          <Upload className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+          <Upload className="w-10 h-10 sm:w-12 sm:h-12 text-muted-foreground mx-auto mb-4" />
           <div className="space-y-2">
-            <p className="text-lg font-medium">
+            <p className="text-base sm:text-lg font-medium px-2">
               Clique para fazer upload ou arraste sua foto aqui
             </p>
             <p className="text-sm text-muted-foreground">
@@ -143,7 +143,7 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
         <div className="space-y-4">
           {/* Photo Preview */}
           <div className="relative">
-            <div className="aspect-square max-w-xs sm:max-w-sm mx-auto rounded-xl overflow-hidden bg-muted">
+            <div className="aspect-square max-w-[250px] sm:max-w-xs md:max-w-sm mx-auto rounded-xl overflow-hidden bg-muted">
               {previewUrl && (
                 <img
                   src={previewUrl}
