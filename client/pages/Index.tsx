@@ -211,8 +211,8 @@ export default function Index() {
           </div>
 
           {/* Desktop: Full layout */}
-          <div className="hidden md:flex justify-center">
-            <div className="flex items-center space-x-4">
+          <div className="hidden lg:flex justify-center">
+            <div className="flex items-center space-x-4 xl:space-x-6">
               {steps.map((step, index) => {
                 const isActive = currentStep === step.id;
                 const isCompleted = currentStep > step.id;
