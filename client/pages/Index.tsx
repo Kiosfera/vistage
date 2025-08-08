@@ -143,48 +143,87 @@ export default function Index() {
         </div>
 
         {/* Step Navigation */}
-        <div className="flex justify-center mb-8">
-          <div className="flex items-center space-x-4 overflow-x-auto">
-            {steps.map((step, index) => {
-              const isActive = currentStep === step.id;
-              const isCompleted = currentStep > step.id;
-              const Icon = step.icon;
+        <div className="mb-8">
+          {/* Mobile: Horizontal scroll */}
+          <div className="md:hidden">
+            <div className="flex items-center space-x-3 overflow-x-auto pb-2 px-4">
+              {steps.map((step, index) => {
+                const isActive = currentStep === step.id;
+                const isCompleted = currentStep > step.id;
+                const Icon = step.icon;
 
-              return (
-                <div
-                  key={step.id}
-                  className={`flex items-center space-x-2 ${
-                    index !== steps.length - 1 ? 'mr-8' : ''
-                  }`}
-                >
-                  <div
-                    className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
-                      isCompleted
-                        ? 'bg-primary text-primary-foreground'
-                        : isActive
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-muted text-muted-foreground'
-                    }`}
-                  >
-                    {isCompleted ? (
-                      <Check className="w-5 h-5" />
-                    ) : (
-                      <Icon className="w-5 h-5" />
-                    )}
-                  </div>
-                  <div className="hidden md:block">
-                    <p className={`text-sm font-medium ${
-                      isActive ? 'text-foreground' : 'text-muted-foreground'
+                return (
+                  <div key={step.id} className="flex flex-col items-center min-w-0 flex-shrink-0">
+                    <div
+                      className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
+                        isCompleted
+                          ? 'bg-primary text-primary-foreground'
+                          : isActive
+                          ? 'bg-primary text-primary-foreground'
+                          : 'bg-muted text-muted-foreground'
+                      }`}
+                    >
+                      {isCompleted ? (
+                        <Check className="w-4 h-4" />
+                      ) : (
+                        <Icon className="w-4 h-4" />
+                      )}
+                    </div>
+                    <p className={`text-xs mt-1 text-center ${
+                      isActive ? 'text-foreground font-medium' : 'text-muted-foreground'
                     }`}>
                       {step.title}
                     </p>
                   </div>
-                  {index !== steps.length - 1 && (
-                    <div className="hidden md:block w-16 h-px bg-border ml-4" />
-                  )}
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Desktop: Full layout */}
+          <div className="hidden md:flex justify-center">
+            <div className="flex items-center space-x-4">
+              {steps.map((step, index) => {
+                const isActive = currentStep === step.id;
+                const isCompleted = currentStep > step.id;
+                const Icon = step.icon;
+
+                return (
+                  <div
+                    key={step.id}
+                    className={`flex items-center space-x-2 ${
+                      index !== steps.length - 1 ? 'mr-8' : ''
+                    }`}
+                  >
+                    <div
+                      className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
+                        isCompleted
+                          ? 'bg-primary text-primary-foreground'
+                          : isActive
+                          ? 'bg-primary text-primary-foreground'
+                          : 'bg-muted text-muted-foreground'
+                      }`}
+                    >
+                      {isCompleted ? (
+                        <Check className="w-5 h-5" />
+                      ) : (
+                        <Icon className="w-5 h-5" />
+                      )}
+                    </div>
+                    <div>
+                      <p className={`text-sm font-medium ${
+                        isActive ? 'text-foreground' : 'text-muted-foreground'
+                      }`}>
+                        {step.title}
+                      </p>
+                    </div>
+                    {index !== steps.length - 1 && (
+                      <div className="w-16 h-px bg-border ml-4" />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
 
