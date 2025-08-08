@@ -270,7 +270,9 @@ export default function Index() {
                 {steps[currentStep - 1].description}
               </p>
             </CardHeader>
-            <CardContent className="pt-0 px-4 sm:px-6 pb-4 sm:pb-6">{renderStepContent()}</CardContent>
+            <CardContent className="pt-0 px-4 sm:px-6 pb-4 sm:pb-6">
+              {renderStepContent()}
+            </CardContent>
           </Card>
 
           {/* Navigation Buttons */}
