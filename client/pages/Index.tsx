@@ -226,7 +226,7 @@ export default function Index() {
                     }`}
                   >
                     <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
+                      className={`w-10 h-10 xl:w-12 xl:h-12 rounded-full flex items-center justify-center transition-colors ${
                         isCompleted
                           ? "bg-primary text-primary-foreground"
                           : isActive
@@ -235,9 +235,9 @@ export default function Index() {
                       }`}
                     >
                       {isCompleted ? (
-                        <Check className="w-5 h-5" />
+                        <Check className="w-5 h-5 xl:w-6 xl:h-6" />
                       ) : (
-                        <Icon className="w-5 h-5" />
+                        <Icon className="w-5 h-5 xl:w-6 xl:h-6" />
                       )}
                     </div>
                     <div>
