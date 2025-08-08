@@ -1,58 +1,49 @@
-import React, { useState } from "react";
-import {
-  ChevronLeft,
-  ChevronRight,
-  Check,
-  Upload,
-  Camera,
-  User,
-  Brain,
-  Sparkles,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import PhotoUpload from "@/components/PhotoUpload";
-import PreferencesForm from "@/components/PreferencesForm";
-import BehavioralForm from "@/components/BehavioralForm";
-import ResultsDisplay from "@/components/ResultsDisplay";
-import AIStyleAssistant from "@/components/AIStyleAssistant";
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight, Check, Upload, Camera, User, Brain, Sparkles, MessageCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Progress } from '@/components/ui/progress';
+import PhotoUpload from '@/components/PhotoUpload';
+import PreferencesForm from '@/components/PreferencesForm';
+import BehavioralForm from '@/components/BehavioralForm';
+import ResultsDisplay from '@/components/ResultsDisplay';
+import AIStyleAssistant from '@/components/AIStyleAssistant';
 
 const steps = [
   {
     id: 1,
-    title: "Bem-vindo",
-    description: "Vamos começar seu perfil personalizado",
+    title: 'Bem-vindo',
+    description: 'Vamos começar seu perfil personalizado',
     icon: User,
   },
   {
     id: 2,
-    title: "Sua Foto",
-    description: "Faça upload da sua foto para análise",
+    title: 'Sua Foto',
+    description: 'Faça upload da sua foto para análise',
     icon: Camera,
   },
   {
     id: 3,
-    title: "Preferências",
-    description: "Conte-nos sobre seu estilo pessoal",
+    title: 'Preferências',
+    description: 'Conte-nos sobre seu estilo pessoal',
     icon: Sparkles,
   },
   {
     id: 4,
-    title: "Comportamento",
-    description: "Suas preferências comportamentais",
+    title: 'Comportamento',
+    description: 'Suas preferências comportamentais',
     icon: Brain,
   },
   {
     id: 5,
-    title: "Resultados",
-    description: "Sua análise facial personalizada",
+    title: 'Resultados',
+    description: 'Sua análise facial personalizada',
     icon: Check,
   },
   {
     id: 6,
-    title: "Assistente IA",
-    description: "Converse com sua consultora virtual",
+    title: 'Assistente IA',
+    description: 'Converse com sua consultora virtual',
     icon: Camera, // We'll import MessageCircle icon
   },
 ];
@@ -81,15 +72,15 @@ export default function Index() {
   };
 
   const handlePhotoUpload = (file: File) => {
-    setUserData((prev) => ({ ...prev, photo: file }));
+    setUserData(prev => ({ ...prev, photo: file }));
   };
 
   const handlePreferences = (preferences: any) => {
-    setUserData((prev) => ({ ...prev, preferences }));
+    setUserData(prev => ({ ...prev, preferences }));
   };
 
   const handleBehavioral = (behavioral: any) => {
-    setUserData((prev) => ({ ...prev, behavioral }));
+    setUserData(prev => ({ ...prev, behavioral }));
   };
 
   const renderStepContent = () => {
@@ -105,8 +96,8 @@ export default function Index() {
                 Bem-vindo ao seu Onboarding
               </h2>
               <p className="text-muted-foreground text-lg max-w-md mx-auto">
-                Vamos criar um perfil personalizado baseado na sua foto e
-                preferências. O processo é rápido e seguro.
+                Vamos criar um perfil personalizado baseado na sua foto e preferências. 
+                O processo é rápido e seguro.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
@@ -126,9 +117,7 @@ export default function Index() {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Brain className="w-6 h-6 text-primary" />
                 </div>
-                <span className="text-sm font-medium">
-                  Perfil Comportamental
-                </span>
+                <span className="text-sm font-medium">Perfil Comportamental</span>
               </div>
             </div>
           </div>
@@ -152,9 +141,7 @@ export default function Index() {
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex justify-between items-center mb-4">
-            <h1 className="text-2xl font-heading font-normal text-foreground tracking-wide">
-              Onboarding
-            </h1>
+            <h1 className="text-2xl font-heading font-normal text-foreground tracking-wide">Onboarding</h1>
             <span className="text-sm text-muted-foreground">
               Passo {currentStep} de {steps.length}
             </span>
@@ -173,17 +160,14 @@ export default function Index() {
                 const Icon = step.icon;
 
                 return (
-                  <div
-                    key={step.id}
-                    className="flex flex-col items-center min-w-0 flex-shrink-0"
-                  >
+                  <div key={step.id} className="flex flex-col items-center min-w-0 flex-shrink-0">
                     <div
                       className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
                         isCompleted
-                          ? "bg-primary text-primary-foreground"
+                          ? 'bg-primary text-primary-foreground'
                           : isActive
-                            ? "bg-primary text-primary-foreground"
-                            : "bg-muted text-muted-foreground"
+                          ? 'bg-primary text-primary-foreground'
+                          : 'bg-muted text-muted-foreground'
                       }`}
                     >
                       {isCompleted ? (
@@ -192,13 +176,9 @@ export default function Index() {
                         <Icon className="w-4 h-4" />
                       )}
                     </div>
-                    <p
-                      className={`text-xs mt-1 text-center ${
-                        isActive
-                          ? "text-foreground font-medium"
-                          : "text-muted-foreground"
-                      }`}
-                    >
+                    <p className={`text-xs mt-1 text-center ${
+                      isActive ? 'text-foreground font-medium' : 'text-muted-foreground'
+                    }`}>
                       {step.title}
                     </p>
                   </div>
@@ -219,16 +199,16 @@ export default function Index() {
                   <div
                     key={step.id}
                     className={`flex items-center space-x-2 ${
-                      index !== steps.length - 1 ? "mr-8" : ""
+                      index !== steps.length - 1 ? 'mr-8' : ''
                     }`}
                   >
                     <div
                       className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
                         isCompleted
-                          ? "bg-primary text-primary-foreground"
+                          ? 'bg-primary text-primary-foreground'
                           : isActive
-                            ? "bg-primary text-primary-foreground"
-                            : "bg-muted text-muted-foreground"
+                          ? 'bg-primary text-primary-foreground'
+                          : 'bg-muted text-muted-foreground'
                       }`}
                     >
                       {isCompleted ? (
@@ -238,11 +218,9 @@ export default function Index() {
                       )}
                     </div>
                     <div>
-                      <p
-                        className={`text-sm font-medium ${
-                          isActive ? "text-foreground" : "text-muted-foreground"
-                        }`}
-                      >
+                      <p className={`text-sm font-medium ${
+                        isActive ? 'text-foreground' : 'text-muted-foreground'
+                      }`}>
                         {step.title}
                       </p>
                     </div>
@@ -267,7 +245,9 @@ export default function Index() {
                 {steps[currentStep - 1].description}
               </p>
             </CardHeader>
-            <CardContent className="pt-0">{renderStepContent()}</CardContent>
+            <CardContent className="pt-0">
+              {renderStepContent()}
+            </CardContent>
           </Card>
 
           {/* Navigation Buttons */}
@@ -289,12 +269,8 @@ export default function Index() {
               className="flex items-center justify-center space-x-2 order-1 sm:order-2"
               size="lg"
             >
-              <span>
-                {currentStep === steps.length ? "Finalizar" : "Próximo"}
-              </span>
-              {currentStep !== steps.length && (
-                <ChevronRight className="w-4 h-4" />
-              )}
+              <span>{currentStep === steps.length ? 'Finalizar' : 'Próximo'}</span>
+              {currentStep !== steps.length && <ChevronRight className="w-4 h-4" />}
             </Button>
           </div>
         </div>
