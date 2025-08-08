@@ -353,15 +353,15 @@ export default function AIStyleAssistant({ userData }: AIStyleAssistantProps) {
         </CardContent>
       </Card>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <Button
           variant="outline"
-          className="h-auto p-4 text-left flex-col items-start"
+          className="h-auto p-3 sm:p-4 text-left flex-col items-start"
           onClick={() =>
             handleSuggestionClick("Que cores ficam melhor em mim?")
           }
         >
-          <Sparkles className="w-5 h-5 mb-2 text-primary" />
+          <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 mb-2 text-primary" />
           <span className="font-medium text-sm">Minha Paleta</span>
           <span className="text-xs text-muted-foreground">
             Descubra suas cores ideais
@@ -370,12 +370,12 @@ export default function AIStyleAssistant({ userData }: AIStyleAssistantProps) {
 
         <Button
           variant="outline"
-          className="h-auto p-4 text-left flex-col items-start"
+          className="h-auto p-3 sm:p-4 text-left flex-col items-start"
           onClick={() =>
             handleSuggestionClick("Como posso criar um look para trabalho?")
           }
         >
-          <Heart className="w-5 h-5 mb-2 text-primary" />
+          <Heart className="w-4 h-4 sm:w-5 sm:h-5 mb-2 text-primary" />
           <span className="font-medium text-sm">Look Profissional</span>
           <span className="text-xs text-muted-foreground">
             Dicas para o trabalho
