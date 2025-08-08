@@ -13,6 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
@@ -387,7 +388,7 @@ export default function ResultsDisplay({ userData }: ResultsDisplayProps) {
             <div>
               <p className="font-medium text-sm">Próximos Passos</p>
               <p className="text-xs text-muted-foreground mt-1">
-                Baseado na sua análise, recomendamos atualizações no seu
+                Baseado na sua análise, recomendamos atualiza��ões no seu
                 guarda-roupa que irão destacar suas melhores características.
                 Consulte um personal stylist para implementar essas
                 recomendações.
