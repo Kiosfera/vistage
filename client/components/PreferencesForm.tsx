@@ -196,7 +196,7 @@ export default function PreferencesForm({ onSubmit }: PreferencesFormProps) {
           <Heart className="w-5 h-5" />
           Estilos que Combinam com Você (escolha até 3)
         </Label>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
           {styles.map((style) => (
             <Card
               key={style.id}
