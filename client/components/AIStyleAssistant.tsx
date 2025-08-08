@@ -242,7 +242,7 @@ export default function AIStyleAssistant({ userData }: AIStyleAssistantProps) {
         </p>
       </div>
 
-      <Card className="h-[400px] sm:h-[500px] flex flex-col">
+      <Card className="h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[700px] flex flex-col">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center gap-2 text-lg">
             <MessageCircle className="w-5 h-5" />
