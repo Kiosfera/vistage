@@ -262,11 +262,11 @@ export default function Index() {
         {/* Step Content */}
         <div className="max-w-2xl xl:max-w-4xl mx-auto">
           <Card className="border-0 shadow-lg mx-2 sm:mx-0">
-            <CardHeader className="text-center pb-4 sm:pb-6 px-4 sm:px-6">
-              <CardTitle className="text-lg sm:text-xl font-accent font-medium tracking-wide">
+            <CardHeader className="text-center pb-4 sm:pb-6 lg:pb-8 px-4 sm:px-6 lg:px-8">
+              <CardTitle className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-accent font-medium tracking-wide">
                 {steps[currentStep - 1].title}
               </CardTitle>
-              <p className="text-sm sm:text-base text-muted-foreground">
+              <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
                 {steps[currentStep - 1].description}
               </p>
             </CardHeader>
