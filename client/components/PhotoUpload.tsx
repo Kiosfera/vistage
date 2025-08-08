@@ -198,7 +198,7 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
           )}
 
           {/* File Info */}
-          <div className="bg-muted rounded-lg p-4">
+          <div className="bg-muted rounded-lg p-3 sm:p-4">
             <div className="flex items-center justify-between">
               <div>
                 <p className="font-medium text-sm">{selectedFile.name}</p>
