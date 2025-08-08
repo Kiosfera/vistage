@@ -81,21 +81,24 @@ function getAIResponse(userMessage: string): Message {
   let response = '';
   let suggestions: string[] = [];
 
-  if (message.includes('cor') || message.includes('tons')) {
+  if (message.includes('cor') || message.includes('tons') || message.includes('paleta')) {
     response = aiResponses.cores[Math.floor(Math.random() * aiResponses.cores.length)];
-    suggestions = ['Como combinar essas cores?', 'Que maquiagem usar?', 'Looks para diferentes ocasiões'];
-  } else if (message.includes('trabalho') || message.includes('profissional')) {
+    suggestions = ['Como combinar essas cores?', 'Maquiagem que combina', 'Looks para cada estação'];
+  } else if (message.includes('trabalho') || message.includes('profissional') || message.includes('escritório')) {
     response = aiResponses.trabalho[Math.floor(Math.random() * aiResponses.trabalho.length)];
-    suggestions = ['Looks casuais para escritório', 'Como variar os looks?', 'Sapatos ideais'];
-  } else if (message.includes('acessório') || message.includes('joia')) {
+    suggestions = ['Looks para apresentações', 'Sapatos confortáveis', 'Como variar no dia a dia'];
+  } else if (message.includes('acessório') || message.includes('joia') || message.includes('bolsa')) {
     response = aiResponses.acessorios[Math.floor(Math.random() * aiResponses.acessorios.length)];
-    suggestions = ['Bolsas que combinam', 'Óculos de sol', 'Lenços e echarpes'];
-  } else if (message.includes('encontro') || message.includes('date') || message.includes('romântico')) {
+    suggestions = ['Bolsas para cada ocasião', 'Óculos de sol ideais', 'Joias statement'];
+  } else if (message.includes('encontro') || message.includes('date') || message.includes('romântico') || message.includes('jantar')) {
     response = aiResponses.encontro[Math.floor(Math.random() * aiResponses.encontro.length)];
-    suggestions = ['Maquiagem para encontro', 'Sapatos confortáveis', 'Perfumes que combinam'];
+    suggestions = ['Maquiagem para encontro', 'Sapatos para impressionar', 'Perfumes marcantes'];
+  } else if (message.includes('maquiagem') || message.includes('makeup') || message.includes('batom') || message.includes('sombra')) {
+    response = aiResponses.maquiagem[Math.floor(Math.random() * aiResponses.maquiagem.length)];
+    suggestions = ['Base ideal para mim', 'Cores de batom', 'Maquiagem para o dia'];
   } else {
     response = aiResponses.geral[Math.floor(Math.random() * aiResponses.geral.length)];
-    suggestions = ['Dicas de combinações', 'Looks para cada estação', 'Como cuidar das roupas'];
+    suggestions = ['Dicas de combinações', 'Cuidados com as roupas', 'Tendências que combinam'];
   }
 
   return {
