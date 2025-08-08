@@ -181,7 +181,7 @@ export default function Index() {
                     className="flex flex-col items-center min-w-0 flex-shrink-0"
                   >
                     <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
+                      className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-colors ${
                         isCompleted
                           ? "bg-primary text-primary-foreground"
                           : isActive
@@ -190,13 +190,13 @@ export default function Index() {
                       }`}
                     >
                       {isCompleted ? (
-                        <Check className="w-4 h-4" />
+                        <Check className="w-3 h-3 sm:w-4 sm:h-4" />
                       ) : (
-                        <Icon className="w-4 h-4" />
+                        <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
                       )}
                     </div>
                     <p
-                      className={`text-xs mt-1 text-center ${
+                      className={`text-xs mt-1 text-center max-w-[60px] leading-tight ${
                         isActive
                           ? "text-foreground font-medium"
                           : "text-muted-foreground"
