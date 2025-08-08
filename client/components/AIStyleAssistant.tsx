@@ -251,7 +251,10 @@ export default function AIStyleAssistant({ userData }: AIStyleAssistantProps) {
         </CardHeader>
 
         <CardContent className="flex-1 flex flex-col p-0 overflow-hidden">
-          <ScrollArea ref={scrollAreaRef} className="flex-1 px-4 overflow-y-auto">
+          <ScrollArea
+            ref={scrollAreaRef}
+            className="flex-1 px-4 overflow-y-auto"
+          >
             <div className="space-y-4 py-4 min-h-0">
               {messages.map((message) => (
                 <div
@@ -277,7 +280,9 @@ export default function AIStyleAssistant({ userData }: AIStyleAssistantProps) {
                         : "bg-muted text-muted-foreground",
                     )}
                   >
-                    <div className="whitespace-pre-wrap leading-relaxed">{message.content}</div>
+                    <div className="whitespace-pre-wrap leading-relaxed">
+                      {message.content}
+                    </div>
 
                     {message.suggestions && message.suggestions.length > 0 && (
                       <div className="mt-3 space-y-2">
