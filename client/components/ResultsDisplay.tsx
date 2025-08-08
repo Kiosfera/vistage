@@ -368,6 +368,17 @@ export default function ResultsDisplay({ userData }: ResultsDisplayProps) {
         </Button>
       </div>
 
+      {/* Chat with AI Button */}
+      <div className="text-center">
+        <Button size="lg" className="w-full sm:w-auto">
+          <Brain className="w-5 h-5 mr-2" />
+          Conversar com Assistente IA
+        </Button>
+        <p className="text-sm text-muted-foreground mt-2">
+          Tire dúvidas e receba dicas personalizadas sobre seu estilo
+        </p>
+      </div>
+
       {/* Additional Info */}
       <Card className="bg-accent/50 border-accent">
         <CardContent className="p-4">
