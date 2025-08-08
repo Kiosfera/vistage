@@ -166,10 +166,10 @@ export default function Index() {
         </div>
 
         {/* Step Navigation */}
-        <div className="mb-8">
+        <div className="mb-6 md:mb-8">
           {/* Mobile: Horizontal scroll */}
           <div className="md:hidden">
-            <div className="flex items-center space-x-3 overflow-x-auto pb-2 px-4">
+            <div className="flex items-center space-x-2 sm:space-x-3 overflow-x-auto pb-2 px-1">
               {steps.map((step, index) => {
                 const isActive = currentStep === step.id;
                 const isCompleted = currentStep > step.id;
