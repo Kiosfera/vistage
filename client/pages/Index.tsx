@@ -244,21 +244,23 @@ export default function Index() {
           </Card>
 
           {/* Navigation Buttons */}
-          <div className="flex justify-between mt-8">
+          <div className="flex flex-col sm:flex-row justify-between gap-3 mt-8">
             <Button
               variant="outline"
               onClick={prevStep}
               disabled={currentStep === 1}
-              className="flex items-center space-x-2"
+              className="flex items-center justify-center space-x-2 order-2 sm:order-1"
+              size="lg"
             >
               <ChevronLeft className="w-4 h-4" />
               <span>Anterior</span>
             </Button>
-            
+
             <Button
               onClick={nextStep}
               disabled={currentStep === steps.length}
-              className="flex items-center space-x-2"
+              className="flex items-center justify-center space-x-2 order-1 sm:order-2"
+              size="lg"
             >
               <span>{currentStep === steps.length ? 'Finalizar' : 'Próximo'}</span>
               {currentStep !== steps.length && <ChevronRight className="w-4 h-4" />}
