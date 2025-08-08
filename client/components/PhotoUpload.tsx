@@ -217,11 +217,11 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
       )}
 
       {/* Tips */}
-      <div className="bg-accent rounded-lg p-4">
-        <h4 className="font-medium text-sm mb-2">
+      <div className="bg-accent rounded-lg p-3 sm:p-4 lg:p-6">
+        <h4 className="font-medium text-sm sm:text-base mb-2">
           Dicas para uma melhor análise:
         </h4>
-        <ul className="text-xs text-muted-foreground space-y-1">
+        <ul className="text-xs sm:text-sm text-muted-foreground space-y-1">
           <li>• Use uma foto com boa iluminação</li>
           <li>• Certifique-se de que seu rosto está claramente visível</li>
           <li>• Evite usar óculos escuros ou acessórios que cubram o rosto</li>
