@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
-import { Upload, Camera, X, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
-import { cn } from '@/lib/utils';
+import React, { useState, useRef } from "react";
+import { Upload, Camera, X, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
+import { cn } from "@/lib/utils";
 
 interface PhotoUploadProps {
   onPhotoUpload: (file: File) => void;
@@ -18,18 +18,19 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileSelect = (file: File) => {
-    if (!file.type.startsWith('image/')) {
-      alert('Por favor, selecione apenas arquivos de imagem.');
+    if (!file.type.startsWith("image/")) {
+      alert("Por favor, selecione apenas arquivos de imagem.");
       return;
     }
 
-    if (file.size > 10 * 1024 * 1024) { // 10MB limit
-      alert('O arquivo deve ter no máximo 10MB.');
+    if (file.size > 10 * 1024 * 1024) {
+      // 10MB limit
+      alert("O arquivo deve ter no máximo 10MB.");
       return;
     }
 
     setSelectedFile(file);
-    
+
     // Create preview URL
     const url = URL.createObjectURL(file);
     setPreviewUrl(url);
@@ -44,7 +45,7 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
 
     // Simulate upload progress
     for (let i = 0; i <= 100; i += 10) {
-      await new Promise(resolve => setTimeout(resolve, 100));
+      await new Promise((resolve) => setTimeout(resolve, 100));
       setUploadProgress(i);
     }
 
@@ -91,7 +92,7 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
     setIsUploading(false);
     setIsUploaded(false);
     if (fileInputRef.current) {
-      fileInputRef.current.value = '';
+      fileInputRef.current.value = "";
     }
   };
 
@@ -99,7 +100,9 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
     <div className="space-y-6">
       <div className="text-center mb-6">
         <Camera className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h3 className="text-xl font-accent font-medium mb-2 tracking-wide">Faça upload da sua foto</h3>
+        <h3 className="text-xl font-accent font-medium mb-2 tracking-wide">
+          Faça upload da sua foto
+        </h3>
         <p className="text-muted-foreground">
           Escolha uma foto clara do seu rosto para uma análise mais precisa
         </p>
@@ -111,7 +114,7 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
             "border-2 border-dashed rounded-xl p-8 text-center transition-colors cursor-pointer",
             isDragging
               ? "border-primary bg-primary/5"
-              : "border-border hover:border-primary/50 hover:bg-accent/50"
+              : "border-border hover:border-primary/50 hover:bg-accent/50",
           )}
           onDrop={handleDrop}
           onDragOver={handleDragOver}
@@ -127,7 +130,7 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
               PNG, JPG ou JPEG até 10MB
             </p>
           </div>
-          
+
           <input
             ref={fileInputRef}
             type="file"
@@ -149,7 +152,7 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
                 />
               )}
             </div>
-            
+
             {!isUploading && !isUploaded && (
               <Button
                 variant="destructive"
@@ -184,7 +187,9 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
             <div className="text-center space-y-2">
               <div className="flex items-center justify-center space-x-2 text-success">
                 <CheckCircle className="w-5 h-5" />
-                <span className="font-medium">Upload concluído com sucesso!</span>
+                <span className="font-medium">
+                  Upload concluído com sucesso!
+                </span>
               </div>
               <p className="text-sm text-muted-foreground">
                 Sua foto está sendo processada para análise
@@ -213,7 +218,9 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
 
       {/* Tips */}
       <div className="bg-accent rounded-lg p-4">
-        <h4 className="font-medium text-sm mb-2">Dicas para uma melhor análise:</h4>
+        <h4 className="font-medium text-sm mb-2">
+          Dicas para uma melhor análise:
+        </h4>
         <ul className="text-xs text-muted-foreground space-y-1">
           <li>• Use uma foto com boa iluminação</li>
           <li>• Certifique-se de que seu rosto está claramente visível</li>

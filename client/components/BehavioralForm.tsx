@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Brain, Users, Target, Clock, Zap } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Slider } from '@/components/ui/slider';
-import { cn } from '@/lib/utils';
+import React, { useState } from "react";
+import { Brain, Users, Target, Clock, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Slider } from "@/components/ui/slider";
+import { cn } from "@/lib/utils";
 
 interface BehavioralFormProps {
   onSubmit: (behavioral: any) => void;
@@ -13,84 +13,86 @@ interface BehavioralFormProps {
 
 const personalityTraits = [
   {
-    id: 'extroversion',
-    name: 'Extroversão',
-    description: 'Como você se relaciona com outras pessoas',
+    id: "extroversion",
+    name: "Extroversão",
+    description: "Como você se relaciona com outras pessoas",
     icon: Users,
-    leftLabel: 'Introvertido',
-    rightLabel: 'Extrovertido',
+    leftLabel: "Introvertido",
+    rightLabel: "Extrovertido",
   },
   {
-    id: 'attention',
-    name: 'Atenção a Detalhes',
-    description: 'O quanto você nota pequenos detalhes',
+    id: "attention",
+    name: "Atenção a Detalhes",
+    description: "O quanto você nota pequenos detalhes",
     icon: Target,
-    leftLabel: 'Visão Geral',
-    rightLabel: 'Muito Detalhista',
+    leftLabel: "Visão Geral",
+    rightLabel: "Muito Detalhista",
   },
   {
-    id: 'planning',
-    name: 'Planejamento',
-    description: 'Como você organiza suas atividades',
+    id: "planning",
+    name: "Planejamento",
+    description: "Como você organiza suas atividades",
     icon: Clock,
-    leftLabel: 'Espontâneo',
-    rightLabel: 'Muito Planejado',
+    leftLabel: "Espontâneo",
+    rightLabel: "Muito Planejado",
   },
   {
-    id: 'energy',
-    name: 'Nível de Energia',
-    description: 'Sua energia ao longo do dia',
+    id: "energy",
+    name: "Nível de Energia",
+    description: "Sua energia ao longo do dia",
     icon: Zap,
-    leftLabel: 'Calmo/Relaxado',
-    rightLabel: 'Muito Energético',
+    leftLabel: "Calmo/Relaxado",
+    rightLabel: "Muito Energético",
   },
 ];
 
 const lifestyleQuestions = [
   {
-    id: 'workStyle',
-    question: 'Como você prefere trabalhar?',
+    id: "workStyle",
+    question: "Como você prefere trabalhar?",
     options: [
-      { value: 'office', label: 'Escritório formal' },
-      { value: 'hybrid', label: 'Híbrido (casa + escritório)' },
-      { value: 'remote', label: 'Totalmente remoto' },
-      { value: 'creative', label: 'Ambiente criativo/casual' },
+      { value: "office", label: "Escritório formal" },
+      { value: "hybrid", label: "Híbrido (casa + escritório)" },
+      { value: "remote", label: "Totalmente remoto" },
+      { value: "creative", label: "Ambiente criativo/casual" },
     ],
   },
   {
-    id: 'socialFrequency',
-    question: 'Com que frequência você sai para eventos sociais?',
+    id: "socialFrequency",
+    question: "Com que frequência você sai para eventos sociais?",
     options: [
-      { value: 'rarely', label: 'Raramente (1-2x por mês)' },
-      { value: 'sometimes', label: 'Às vezes (1x por semana)' },
-      { value: 'often', label: 'Frequentemente (2-3x por semana)' },
-      { value: 'daily', label: 'Quase diariamente' },
+      { value: "rarely", label: "Raramente (1-2x por mês)" },
+      { value: "sometimes", label: "Às vezes (1x por semana)" },
+      { value: "often", label: "Frequentemente (2-3x por semana)" },
+      { value: "daily", label: "Quase diariamente" },
     ],
   },
   {
-    id: 'decisionMaking',
-    question: 'Como você toma decisões sobre roupas?',
+    id: "decisionMaking",
+    question: "Como você toma decisões sobre roupas?",
     options: [
-      { value: 'quick', label: 'Rápido e intuitivo' },
-      { value: 'research', label: 'Pesquiso bastante antes' },
-      { value: 'advice', label: 'Peço opinião de outros' },
-      { value: 'mood', label: 'Baseado no meu humor' },
+      { value: "quick", label: "Rápido e intuitivo" },
+      { value: "research", label: "Pesquiso bastante antes" },
+      { value: "advice", label: "Peço opinião de outros" },
+      { value: "mood", label: "Baseado no meu humor" },
     ],
   },
   {
-    id: 'priorities',
-    question: 'O que é mais importante para você ao se vestir?',
+    id: "priorities",
+    question: "O que é mais importante para você ao se vestir?",
     options: [
-      { value: 'comfort', label: 'Conforto acima de tudo' },
-      { value: 'style', label: 'Estilo e aparência' },
-      { value: 'practicality', label: 'Praticidade' },
-      { value: 'expression', label: 'Expressão pessoal' },
+      { value: "comfort", label: "Conforto acima de tudo" },
+      { value: "style", label: "Estilo e aparência" },
+      { value: "practicality", label: "Praticidade" },
+      { value: "expression", label: "Expressão pessoal" },
     ],
   },
 ];
 
 export default function BehavioralForm({ onSubmit }: BehavioralFormProps) {
-  const [personalityScores, setPersonalityScores] = useState<Record<string, number>>({
+  const [personalityScores, setPersonalityScores] = useState<
+    Record<string, number>
+  >({
     extroversion: 50,
     attention: 50,
     planning: 50,
@@ -99,14 +101,14 @@ export default function BehavioralForm({ onSubmit }: BehavioralFormProps) {
   const [answers, setAnswers] = useState<Record<string, string>>({});
 
   const handlePersonalityChange = (traitId: string, value: number[]) => {
-    setPersonalityScores(prev => ({
+    setPersonalityScores((prev) => ({
       ...prev,
       [traitId]: value[0],
     }));
   };
 
   const handleAnswerChange = (questionId: string, value: string) => {
-    setAnswers(prev => ({
+    setAnswers((prev) => ({
       ...prev,
       [questionId]: value,
     }));
@@ -126,7 +128,9 @@ export default function BehavioralForm({ onSubmit }: BehavioralFormProps) {
     <div className="space-y-8">
       <div className="text-center mb-6">
         <Brain className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h3 className="text-xl font-accent font-medium mb-2 tracking-wide">Perfil Comportamental</h3>
+        <h3 className="text-xl font-accent font-medium mb-2 tracking-wide">
+          Perfil Comportamental
+        </h3>
         <p className="text-muted-foreground">
           Entenda melhor sua personalidade para recomendações personalizadas
         </p>
@@ -134,7 +138,9 @@ export default function BehavioralForm({ onSubmit }: BehavioralFormProps) {
 
       {/* Personality Traits */}
       <div className="space-y-6">
-        <h4 className="text-lg font-accent font-medium tracking-wide">Traços de Personalidade</h4>
+        <h4 className="text-lg font-accent font-medium tracking-wide">
+          Traços de Personalidade
+        </h4>
         {personalityTraits.map((trait) => {
           const Icon = trait.icon;
           return (
@@ -146,14 +152,18 @@ export default function BehavioralForm({ onSubmit }: BehavioralFormProps) {
                   </div>
                   <div className="flex-1">
                     <h5 className="font-medium">{trait.name}</h5>
-                    <p className="text-sm text-muted-foreground">{trait.description}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {trait.description}
+                    </p>
                   </div>
                 </div>
-                
+
                 <div className="space-y-3">
                   <Slider
                     value={[personalityScores[trait.id]]}
-                    onValueChange={(value) => handlePersonalityChange(trait.id, value)}
+                    onValueChange={(value) =>
+                      handlePersonalityChange(trait.id, value)
+                    }
                     max={100}
                     min={0}
                     step={1}
@@ -161,7 +171,9 @@ export default function BehavioralForm({ onSubmit }: BehavioralFormProps) {
                   />
                   <div className="flex justify-between text-sm text-muted-foreground">
                     <span>{trait.leftLabel}</span>
-                    <span className="font-medium">{personalityScores[trait.id]}%</span>
+                    <span className="font-medium">
+                      {personalityScores[trait.id]}%
+                    </span>
                     <span>{trait.rightLabel}</span>
                   </div>
                 </div>
@@ -173,7 +185,9 @@ export default function BehavioralForm({ onSubmit }: BehavioralFormProps) {
 
       {/* Lifestyle Questions */}
       <div className="space-y-6">
-        <h4 className="text-lg font-accent font-medium tracking-wide">Estilo de Vida</h4>
+        <h4 className="text-lg font-accent font-medium tracking-wide">
+          Estilo de Vida
+        </h4>
         {lifestyleQuestions.map((question) => (
           <Card key={question.id} className="p-6">
             <CardContent className="p-0">
@@ -181,13 +195,21 @@ export default function BehavioralForm({ onSubmit }: BehavioralFormProps) {
                 {question.question}
               </Label>
               <RadioGroup
-                value={answers[question.id] || ''}
-                onValueChange={(value) => handleAnswerChange(question.id, value)}
+                value={answers[question.id] || ""}
+                onValueChange={(value) =>
+                  handleAnswerChange(question.id, value)
+                }
                 className="space-y-3"
               >
                 {question.options.map((option) => (
-                  <div key={option.value} className="flex items-center space-x-3">
-                    <RadioGroupItem value={option.value} id={`${question.id}-${option.value}`} />
+                  <div
+                    key={option.value}
+                    className="flex items-center space-x-3"
+                  >
+                    <RadioGroupItem
+                      value={option.value}
+                      id={`${question.id}-${option.value}`}
+                    />
                     <Label
                       htmlFor={`${question.id}-${option.value}`}
                       className="flex-1 cursor-pointer"
@@ -211,10 +233,15 @@ export default function BehavioralForm({ onSubmit }: BehavioralFormProps) {
           </h4>
           <div className="space-y-2 text-sm">
             {personalityScores.extroversion > 60 && (
-              <p>• Você parece ser uma pessoa extrovertida que gosta de interação social</p>
+              <p>
+                • Você parece ser uma pessoa extrovertida que gosta de interação
+                social
+              </p>
             )}
             {personalityScores.extroversion < 40 && (
-              <p>• Você tende a ser mais reservado e valoriza momentos tranquilos</p>
+              <p>
+                • Você tende a ser mais reservado e valoriza momentos tranquilos
+              </p>
             )}
             {personalityScores.attention > 70 && (
               <p>• Você tem atenção especial a detalhes e qualidade</p>
@@ -223,10 +250,15 @@ export default function BehavioralForm({ onSubmit }: BehavioralFormProps) {
               <p>• Você prefere organização e planejamento em suas escolhas</p>
             )}
             {personalityScores.energy > 70 && (
-              <p>• Você tem alta energia e pode preferir looks mais dinâmicos</p>
+              <p>
+                • Você tem alta energia e pode preferir looks mais dinâmicos
+              </p>
             )}
             {Object.keys(answers).length > 0 && (
-              <p>• Suas respostas sobre estilo de vida serão consideradas nas recomendações</p>
+              <p>
+                • Suas respostas sobre estilo de vida serão consideradas nas
+                recomendações
+              </p>
             )}
           </div>
         </CardContent>

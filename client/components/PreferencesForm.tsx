@@ -1,62 +1,122 @@
-import React, { useState } from 'react';
-import { Sparkles, Palette, Heart, Star } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { Slider } from '@/components/ui/slider';
-import { cn } from '@/lib/utils';
+import React, { useState } from "react";
+import { Sparkles, Palette, Heart, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
+import { cn } from "@/lib/utils";
 
 interface PreferencesFormProps {
   onSubmit: (preferences: any) => void;
 }
 
 const colorPalettes = [
-  { id: 'warm', name: 'Tons Quentes', colors: ['#FF6B6B', '#FF8E53', '#FF6B9D'], description: 'Cores vibrantes e acolhedoras' },
-  { id: 'cool', name: 'Tons Frios', colors: ['#4ECDC4', '#45B7D1', '#96CEB4'], description: 'Cores calmas e refrescantes' },
-  { id: 'neutral', name: 'Neutros', colors: ['#95A5A6', '#BDC3C7', '#E8E8E8'], description: 'Cores equilibradas e versáteis' },
-  { id: 'bold', name: 'Cores Vibrantes', colors: ['#9B59B6', '#E74C3C', '#F39C12'], description: 'Cores marcantes e energéticas' },
-  { id: 'pastel', name: 'Tons Pastéis', colors: ['#FFB6C1', '#DDA0DD', '#98FB98'], description: 'Cores suaves e delicadas' },
-  { id: 'earth', name: 'Tons Terrosos', colors: ['#D2691E', '#8B4513', '#A0522D'], description: 'Cores naturais e orgânicas' },
+  {
+    id: "warm",
+    name: "Tons Quentes",
+    colors: ["#FF6B6B", "#FF8E53", "#FF6B9D"],
+    description: "Cores vibrantes e acolhedoras",
+  },
+  {
+    id: "cool",
+    name: "Tons Frios",
+    colors: ["#4ECDC4", "#45B7D1", "#96CEB4"],
+    description: "Cores calmas e refrescantes",
+  },
+  {
+    id: "neutral",
+    name: "Neutros",
+    colors: ["#95A5A6", "#BDC3C7", "#E8E8E8"],
+    description: "Cores equilibradas e versáteis",
+  },
+  {
+    id: "bold",
+    name: "Cores Vibrantes",
+    colors: ["#9B59B6", "#E74C3C", "#F39C12"],
+    description: "Cores marcantes e energéticas",
+  },
+  {
+    id: "pastel",
+    name: "Tons Pastéis",
+    colors: ["#FFB6C1", "#DDA0DD", "#98FB98"],
+    description: "Cores suaves e delicadas",
+  },
+  {
+    id: "earth",
+    name: "Tons Terrosos",
+    colors: ["#D2691E", "#8B4513", "#A0522D"],
+    description: "Cores naturais e orgânicas",
+  },
 ];
 
 const styles = [
-  { id: 'classic', name: 'Clássico', icon: '👔', description: 'Elegante e atemporal' },
-  { id: 'modern', name: 'Moderno', icon: '✨', description: 'Contemporâneo e minimalista' },
-  { id: 'bohemian', name: 'Boêmio', icon: '🌸', description: 'Livre e artístico' },
-  { id: 'edgy', name: 'Arrojado', icon: '⚡', description: 'Ousado e diferente' },
-  { id: 'romantic', name: 'Romântico', icon: '💕', description: 'Suave e feminino' },
-  { id: 'sporty', name: 'Esportivo', icon: '👟', description: 'Confortável e prático' },
+  {
+    id: "classic",
+    name: "Clássico",
+    icon: "👔",
+    description: "Elegante e atemporal",
+  },
+  {
+    id: "modern",
+    name: "Moderno",
+    icon: "✨",
+    description: "Contemporâneo e minimalista",
+  },
+  {
+    id: "bohemian",
+    name: "Boêmio",
+    icon: "🌸",
+    description: "Livre e artístico",
+  },
+  {
+    id: "edgy",
+    name: "Arrojado",
+    icon: "⚡",
+    description: "Ousado e diferente",
+  },
+  {
+    id: "romantic",
+    name: "Romântico",
+    icon: "💕",
+    description: "Suave e feminino",
+  },
+  {
+    id: "sporty",
+    name: "Esportivo",
+    icon: "👟",
+    description: "Confortável e prático",
+  },
 ];
 
 const occasions = [
-  { id: 'work', name: 'Trabalho', icon: '💼' },
-  { id: 'casual', name: 'Casual', icon: '👕' },
-  { id: 'formal', name: 'Formal', icon: '👔' },
-  { id: 'party', name: 'Festa', icon: '🎉' },
-  { id: 'date', name: 'Encontro', icon: '💕' },
-  { id: 'travel', name: 'Viagem', icon: '✈️' },
+  { id: "work", name: "Trabalho", icon: "💼" },
+  { id: "casual", name: "Casual", icon: "👕" },
+  { id: "formal", name: "Formal", icon: "👔" },
+  { id: "party", name: "Festa", icon: "🎉" },
+  { id: "date", name: "Encontro", icon: "💕" },
+  { id: "travel", name: "Viagem", icon: "✈️" },
 ];
 
 export default function PreferencesForm({ onSubmit }: PreferencesFormProps) {
-  const [selectedPalette, setSelectedPalette] = useState<string>('');
+  const [selectedPalette, setSelectedPalette] = useState<string>("");
   const [selectedStyles, setSelectedStyles] = useState<string[]>([]);
   const [selectedOccasions, setSelectedOccasions] = useState<string[]>([]);
   const [budgetRange, setBudgetRange] = useState([500]);
   const [adventurous, setAdventurous] = useState([50]);
 
   const handleStyleToggle = (styleId: string) => {
-    setSelectedStyles(prev =>
+    setSelectedStyles((prev) =>
       prev.includes(styleId)
-        ? prev.filter(id => id !== styleId)
-        : [...prev, styleId]
+        ? prev.filter((id) => id !== styleId)
+        : [...prev, styleId],
     );
   };
 
   const handleOccasionToggle = (occasionId: string) => {
-    setSelectedOccasions(prev =>
+    setSelectedOccasions((prev) =>
       prev.includes(occasionId)
-        ? prev.filter(id => id !== occasionId)
-        : [...prev, occasionId]
+        ? prev.filter((id) => id !== occasionId)
+        : [...prev, occasionId],
     );
   };
 
@@ -71,13 +131,18 @@ export default function PreferencesForm({ onSubmit }: PreferencesFormProps) {
     onSubmit(preferences);
   };
 
-  const isComplete = selectedPalette && selectedStyles.length > 0 && selectedOccasions.length > 0;
+  const isComplete =
+    selectedPalette &&
+    selectedStyles.length > 0 &&
+    selectedOccasions.length > 0;
 
   return (
     <div className="space-y-8">
       <div className="text-center mb-6">
         <Sparkles className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h3 className="text-xl font-accent font-medium mb-2 tracking-wide">Suas Preferências Estéticas</h3>
+        <h3 className="text-xl font-accent font-medium mb-2 tracking-wide">
+          Suas Preferências Estéticas
+        </h3>
         <p className="text-muted-foreground">
           Nos conte sobre seu estilo pessoal para recomendações mais precisas
         </p>
@@ -97,7 +162,7 @@ export default function PreferencesForm({ onSubmit }: PreferencesFormProps) {
                 "cursor-pointer transition-all hover:shadow-md",
                 selectedPalette === palette.id
                   ? "ring-2 ring-primary border-primary"
-                  : "hover:border-primary/50"
+                  : "hover:border-primary/50",
               )}
               onClick={() => setSelectedPalette(palette.id)}
             >
@@ -114,7 +179,9 @@ export default function PreferencesForm({ onSubmit }: PreferencesFormProps) {
                   </div>
                   <div className="flex-1">
                     <p className="font-medium text-sm">{palette.name}</p>
-                    <p className="text-xs text-muted-foreground">{palette.description}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {palette.description}
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -140,10 +207,13 @@ export default function PreferencesForm({ onSubmit }: PreferencesFormProps) {
                   : "hover:border-primary/50",
                 selectedStyles.length >= 3 && !selectedStyles.includes(style.id)
                   ? "opacity-50 cursor-not-allowed"
-                  : ""
+                  : "",
               )}
               onClick={() => {
-                if (selectedStyles.length < 3 || selectedStyles.includes(style.id)) {
+                if (
+                  selectedStyles.length < 3 ||
+                  selectedStyles.includes(style.id)
+                ) {
                   handleStyleToggle(style.id);
                 }
               }}
@@ -151,7 +221,9 @@ export default function PreferencesForm({ onSubmit }: PreferencesFormProps) {
               <CardContent className="p-4 text-center">
                 <div className="text-2xl mb-2">{style.icon}</div>
                 <p className="font-medium text-sm">{style.name}</p>
-                <p className="text-xs text-muted-foreground">{style.description}</p>
+                <p className="text-xs text-muted-foreground">
+                  {style.description}
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -177,7 +249,7 @@ export default function PreferencesForm({ onSubmit }: PreferencesFormProps) {
                 "cursor-pointer transition-all hover:shadow-md",
                 selectedOccasions.includes(occasion.id)
                   ? "ring-2 ring-primary border-primary bg-primary/5"
-                  : "hover:border-primary/50"
+                  : "hover:border-primary/50",
               )}
               onClick={() => handleOccasionToggle(occasion.id)}
             >
