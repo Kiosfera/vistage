@@ -173,7 +173,7 @@ export default function BehavioralForm({ onSubmit }: BehavioralFormProps) {
 
       {/* Lifestyle Questions */}
       <div className="space-y-6">
-        <h4 className="text-lg font-medium">Estilo de Vida</h4>
+        <h4 className="text-lg font-accent font-medium tracking-wide">Estilo de Vida</h4>
         {lifestyleQuestions.map((question) => (
           <Card key={question.id} className="p-6">
             <CardContent className="p-0">
