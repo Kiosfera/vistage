@@ -231,13 +231,13 @@ export default function AIStyleAssistant({ userData }: AIStyleAssistantProps) {
   return (
     <div className="space-y-6">
       <div className="text-center">
-        <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-          <Bot className="w-10 h-10 text-primary" />
+        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <Bot className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
         </div>
-        <h3 className="text-xl font-accent font-medium mb-2 tracking-wide">
+        <h3 className="text-lg sm:text-xl font-accent font-medium mb-2 tracking-wide">
           Assistente de Estilo IA
         </h3>
-        <p className="text-muted-foreground">
+        <p className="text-sm sm:text-base text-muted-foreground px-2">
           Converse com Luna e receba dicas personalizadas de estilo
         </p>
       </div>
