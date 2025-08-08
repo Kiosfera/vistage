@@ -97,7 +97,7 @@ export default function ResultsDisplay({ userData }: ResultsDisplayProps) {
           <RefreshCw className="w-10 h-10 text-primary animate-spin" />
         </div>
         <div>
-          <h3 className="text-xl font-semibold mb-2">Analisando sua Foto</h3>
+          <h3 className="text-xl font-accent font-medium mb-2 tracking-wide">Analisando sua Foto</h3>
           <p className="text-muted-foreground mb-4">
             Nosso sistema de IA está processando sua imagem para criar recomendações personalizadas
           </p>
