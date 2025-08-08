@@ -276,12 +276,12 @@ export default function Index() {
           </Card>
 
           {/* Navigation Buttons */}
-          <div className="flex flex-col sm:flex-row justify-between gap-3 mt-6 sm:mt-8 mx-2 sm:mx-0">
+          <div className="flex flex-col sm:flex-row justify-between gap-3 mt-6 sm:mt-8 lg:mt-10 mx-2 sm:mx-0">
             <Button
               variant="outline"
               onClick={prevStep}
               disabled={currentStep === 1}
-              className="flex items-center justify-center space-x-2 order-2 sm:order-1"
+              className="flex items-center justify-center space-x-2 order-2 sm:order-1 lg:px-8 xl:px-10"
               size="lg"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -291,7 +291,7 @@ export default function Index() {
             <Button
               onClick={nextStep}
               disabled={currentStep === steps.length}
-              className="flex items-center justify-center space-x-2 order-1 sm:order-2"
+              className="flex items-center justify-center space-x-2 order-1 sm:order-2 lg:px-8 xl:px-10"
               size="lg"
             >
               <span>
