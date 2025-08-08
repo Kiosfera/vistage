@@ -99,7 +99,7 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
     <div className="space-y-6">
       <div className="text-center mb-6">
         <Camera className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h3 className="text-xl font-semibold mb-2">Faça upload da sua foto</h3>
+        <h3 className="text-xl font-accent font-medium mb-2 tracking-wide">Faça upload da sua foto</h3>
         <p className="text-muted-foreground">
           Escolha uma foto clara do seu rosto para uma análise mais precisa
         </p>
