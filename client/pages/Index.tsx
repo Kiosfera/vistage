@@ -85,7 +85,7 @@ export default function Index() {
               <User className="w-12 h-12 text-primary" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-foreground mb-4">
+              <h2 className="text-3xl font-heading font-normal text-foreground mb-4 tracking-wider">
                 Bem-vindo ao seu Onboarding
               </h2>
               <p className="text-muted-foreground text-lg max-w-md mx-auto">
