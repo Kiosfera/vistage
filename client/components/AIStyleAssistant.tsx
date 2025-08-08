@@ -66,7 +66,7 @@ const aiResponses = {
   maquiagem: [
     "Sua maquiagem ideal realça seus olhos e complementa seu tom de pele! Base com undertone quente + blush rosé + batom em tons nude ou rosé.",
     "Para o dia: base natural + máscara + batom hidratante rosé. Para a noite: adicione sombra dourada ou rosé para criar profundidade!",
-    "Com seu tom de pele, sombras em tons dourados, rosé e lilás são perfeitas! Elas harmonizam com sua paleta natural e destacam seus olhos.",
+    "Com seu tom de pele, sombras em tons dourados, ros�� e lilás são perfeitas! Elas harmonizam com sua paleta natural e destacam seus olhos.",
     "Dica da Luna: um gloss transparente com reflexos dourados é perfeito para você! Mantém a naturalidade mas adiciona um toque especial.",
   ],
   geral: [
@@ -242,7 +242,7 @@ export default function AIStyleAssistant({ userData }: AIStyleAssistantProps) {
         </p>
       </div>
 
-      <Card className="h-[500px] flex flex-col">
+      <Card className="h-[400px] sm:h-[500px] flex flex-col">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center gap-2 text-lg">
             <MessageCircle className="w-5 h-5" />
@@ -250,9 +250,9 @@ export default function AIStyleAssistant({ userData }: AIStyleAssistantProps) {
           </CardTitle>
         </CardHeader>
 
-        <CardContent className="flex-1 flex flex-col p-0">
-          <ScrollArea ref={scrollAreaRef} className="flex-1 px-4">
-            <div className="space-y-4 py-4">
+        <CardContent className="flex-1 flex flex-col p-0 overflow-hidden">
+          <ScrollArea ref={scrollAreaRef} className="flex-1 px-4 overflow-y-auto">
+            <div className="space-y-4 py-4 min-h-0">
               {messages.map((message) => (
                 <div
                   key={message.id}
@@ -271,23 +271,23 @@ export default function AIStyleAssistant({ userData }: AIStyleAssistantProps) {
 
                   <div
                     className={cn(
-                      "max-w-[80%] rounded-lg px-3 py-2 text-sm",
+                      "max-w-[85%] sm:max-w-[80%] rounded-lg px-3 py-2 text-sm break-words",
                       message.sender === "user"
                         ? "bg-primary text-primary-foreground"
                         : "bg-muted text-muted-foreground",
                     )}
                   >
-                    {message.content}
+                    <div className="whitespace-pre-wrap leading-relaxed">{message.content}</div>
 
                     {message.suggestions && message.suggestions.length > 0 && (
                       <div className="mt-3 space-y-2">
                         <p className="text-xs opacity-70">Sugestões:</p>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
                           {message.suggestions.map((suggestion, index) => (
                             <button
                               key={index}
                               onClick={() => handleSuggestionClick(suggestion)}
-                              className="px-2 py-1 bg-background/50 rounded text-xs hover:bg-background/80 transition-colors"
+                              className="px-2 py-1 bg-background/50 rounded text-xs hover:bg-background/80 transition-colors break-words"
                             >
                               {suggestion}
                             </button>
@@ -314,7 +314,7 @@ export default function AIStyleAssistant({ userData }: AIStyleAssistantProps) {
                       <Bot className="w-4 h-4 text-primary" />
                     </AvatarFallback>
                   </Avatar>
-                  <div className="bg-muted rounded-lg px-3 py-2 text-sm">
+                  <div className="bg-muted rounded-lg px-3 py-2 text-sm max-w-[85%] sm:max-w-[80%]">
                     <div className="flex space-x-1">
                       <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce"></div>
                       <div
