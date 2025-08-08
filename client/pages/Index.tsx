@@ -153,9 +153,9 @@ export default function Index() {
     <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-accent/5">
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-8">
         {/* Progress Bar */}
-        <div className="mb-8">
-          <div className="flex justify-between items-center mb-4">
-            <h1 className="text-2xl font-heading font-normal text-foreground tracking-wide">
+        <div className="mb-6 md:mb-8">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2">
+            <h1 className="text-xl sm:text-2xl font-heading font-normal text-foreground tracking-wide">
               Onboarding
             </h1>
             <span className="text-sm text-muted-foreground">
