@@ -140,7 +140,7 @@ export default function PhotoUpload({ onPhotoUpload }: PhotoUploadProps) {
         <div className="space-y-4">
           {/* Photo Preview */}
           <div className="relative">
-            <div className="aspect-square max-w-sm mx-auto rounded-xl overflow-hidden bg-muted">
+            <div className="aspect-square max-w-xs sm:max-w-sm mx-auto rounded-xl overflow-hidden bg-muted">
               {previewUrl && (
                 <img
                   src={previewUrl}
