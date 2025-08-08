@@ -1,41 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   /**
-   * Tailwind CSS theme
+   * Tailwind CSS theme - Rose, Lilac, Cream, Light Gold, White
    * tailwind.config.ts expects the following color variables to be expressed as HSL values.
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
     --background: 0 0% 100%;
-    --foreground: 230 25% 10%;
+    --foreground: 340 20% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 230 25% 10%;
+    --card-foreground: 340 20% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 230 25% 10%;
+    --popover-foreground: 340 20% 25%;
 
-    --primary: 267 84% 55%;
+    --primary: 330 60% 70%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 230 25% 10%;
+    --secondary: 45 40% 95%;
+    --secondary-foreground: 340 20% 25%;
 
-    --muted: 240 5% 96%;
-    --muted-foreground: 230 10% 50%;
+    --muted: 45 40% 95%;
+    --muted-foreground: 340 15% 50%;
 
-    --accent: 268 100% 97%;
-    --accent-foreground: 267 84% 55%;
+    --accent: 280 25% 92%;
+    --accent-foreground: 330 60% 55%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 267 84% 55%;
+    --border: 45 25% 88%;
+    --input: 45 25% 88%;
+    --ring: 330 60% 70%;
 
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
