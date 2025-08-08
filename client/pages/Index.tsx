@@ -110,7 +110,7 @@ export default function Index() {
                 preferências. O processo é rápido e seguro.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 max-w-lg mx-auto">
               <div className="flex flex-col items-center space-y-2">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Camera className="w-6 h-6 text-primary" />
