@@ -276,7 +276,7 @@ export default function Index() {
           </Card>
 
           {/* Navigation Buttons */}
-          <div className="flex flex-col sm:flex-row justify-between gap-3 mt-8">
+          <div className="flex flex-col sm:flex-row justify-between gap-3 mt-6 sm:mt-8 mx-2 sm:mx-0">
             <Button
               variant="outline"
               onClick={prevStep}
