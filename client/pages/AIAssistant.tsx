@@ -1,8 +1,8 @@
-import React from "react";
-import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import AIStyleAssistant from "@/components/AIStyleAssistant";
+import React from 'react';
+import { ArrowLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import AIStyleAssistant from '@/components/AIStyleAssistant';
 
 export default function AIAssistant() {
   return (
@@ -25,7 +25,7 @@ export default function AIAssistant() {
         </div>
 
         {/* AI Assistant */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl xl:max-w-6xl mx-auto">
           <AIStyleAssistant />
         </div>
       </div>
