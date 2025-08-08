@@ -144,7 +144,7 @@ export default function BehavioralForm({ onSubmit }: BehavioralFormProps) {
         {personalityTraits.map((trait) => {
           const Icon = trait.icon;
           return (
-            <Card key={trait.id} className="p-6">
+            <Card key={trait.id} className="p-4 sm:p-6">
               <CardContent className="p-0">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
