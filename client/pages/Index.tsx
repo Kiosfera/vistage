@@ -134,7 +134,7 @@ export default function Index() {
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex justify-between items-center mb-4">
-            <h1 className="text-2xl font-bold text-foreground">Onboarding</h1>
+            <h1 className="text-2xl font-heading font-normal text-foreground tracking-wide">Onboarding</h1>
             <span className="text-sm text-muted-foreground">
               Passo {currentStep} de {steps.length}
             </span>
