@@ -260,7 +260,7 @@ export default function Index() {
         </div>
 
         {/* Step Content */}
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl xl:max-w-4xl mx-auto">
           <Card className="border-0 shadow-lg mx-2 sm:mx-0">
             <CardHeader className="text-center pb-4 sm:pb-6 px-4 sm:px-6">
               <CardTitle className="text-lg sm:text-xl font-accent font-medium tracking-wide">
