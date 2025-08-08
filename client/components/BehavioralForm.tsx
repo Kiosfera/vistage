@@ -126,7 +126,7 @@ export default function BehavioralForm({ onSubmit }: BehavioralFormProps) {
     <div className="space-y-8">
       <div className="text-center mb-6">
         <Brain className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h3 className="text-xl font-semibold mb-2">Perfil Comportamental</h3>
+        <h3 className="text-xl font-accent font-medium mb-2 tracking-wide">Perfil Comportamental</h3>
         <p className="text-muted-foreground">
           Entenda melhor sua personalidade para recomendações personalizadas
         </p>
