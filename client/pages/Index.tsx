@@ -250,7 +250,7 @@ export default function Index() {
                       </p>
                     </div>
                     {index !== steps.length - 1 && (
-                      <div className="w-16 h-px bg-border ml-4" />
+                      <div className="w-16 xl:w-20 h-px bg-border ml-4 xl:ml-6" />
                     )}
                   </div>
                 );
