@@ -44,7 +44,7 @@ const steps = [
     id: 6,
     title: 'Assistente IA',
     description: 'Converse com sua consultora virtual',
-    icon: Camera, // We'll import MessageCircle icon
+    icon: MessageCircle,
   },
 ];
 
