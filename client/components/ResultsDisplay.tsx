@@ -371,10 +371,12 @@ export default function ResultsDisplay({ userData }: ResultsDisplayProps) {
 
       {/* Chat with AI Button */}
       <div className="text-center">
-        <Button size="lg" className="w-full sm:w-auto">
-          <Brain className="w-5 h-5 mr-2" />
-          Conversar com Assistente IA
-        </Button>
+        <Link to="/ai-assistant">
+          <Button size="lg" className="w-full sm:w-auto">
+            <Brain className="w-5 h-5 mr-2" />
+            Conversar com Assistente IA
+          </Button>
+        </Link>
         <p className="text-sm text-muted-foreground mt-2">
           Tire dúvidas e receba dicas personalizadas sobre seu estilo
         </p>
@@ -388,7 +390,7 @@ export default function ResultsDisplay({ userData }: ResultsDisplayProps) {
             <div>
               <p className="font-medium text-sm">Próximos Passos</p>
               <p className="text-xs text-muted-foreground mt-1">
-                Baseado na sua análise, recomendamos atualiza��ões no seu
+                Baseado na sua análise, recomendamos atualizações no seu
                 guarda-roupa que irão destacar suas melhores características.
                 Consulte um personal stylist para implementar essas
                 recomendações.
