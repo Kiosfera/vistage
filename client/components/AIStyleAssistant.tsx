@@ -234,10 +234,10 @@ export default function AIStyleAssistant({ userData }: AIStyleAssistantProps) {
         <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
           <Bot className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
         </div>
-        <h3 className="text-lg sm:text-xl font-accent font-medium mb-2 tracking-wide">
+        <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-accent font-medium mb-2 tracking-wide">
           Assistente de Estilo IA
         </h3>
-        <p className="text-sm sm:text-base text-muted-foreground px-2">
+        <p className="text-sm sm:text-base lg:text-lg text-muted-foreground px-2 max-w-2xl mx-auto">
           Converse com Luna e receba dicas personalizadas de estilo
         </p>
       </div>
@@ -251,10 +251,7 @@ export default function AIStyleAssistant({ userData }: AIStyleAssistantProps) {
         </CardHeader>
 
         <CardContent className="flex-1 flex flex-col p-0 overflow-hidden">
-          <ScrollArea
-            ref={scrollAreaRef}
-            className="flex-1 px-4 overflow-y-auto"
-          >
+          <ScrollArea ref={scrollAreaRef} className="flex-1 px-4 overflow-y-auto">
             <div className="space-y-4 py-4 min-h-0">
               {messages.map((message) => (
                 <div
@@ -280,9 +277,7 @@ export default function AIStyleAssistant({ userData }: AIStyleAssistantProps) {
                         : "bg-muted text-muted-foreground",
                     )}
                   >
-                    <div className="whitespace-pre-wrap leading-relaxed">
-                      {message.content}
-                    </div>
+                    <div className="whitespace-pre-wrap leading-relaxed">{message.content}</div>
 
                     {message.suggestions && message.suggestions.length > 0 && (
                       <div className="mt-3 space-y-2">
