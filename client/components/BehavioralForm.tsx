@@ -125,13 +125,13 @@ export default function BehavioralForm({ onSubmit }: BehavioralFormProps) {
   const isComplete = Object.keys(answers).length === lifestyleQuestions.length;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8">
       <div className="text-center mb-6">
-        <Brain className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h3 className="text-xl font-accent font-medium mb-2 tracking-wide">
+        <Brain className="w-12 h-12 sm:w-16 sm:h-16 text-primary mx-auto mb-4" />
+        <h3 className="text-lg sm:text-xl font-accent font-medium mb-2 tracking-wide">
           Perfil Comportamental
         </h3>
-        <p className="text-muted-foreground">
+        <p className="text-sm sm:text-base text-muted-foreground px-2">
           Entenda melhor sua personalidade para recomendações personalizadas
         </p>
       </div>
