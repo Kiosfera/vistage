@@ -16,10 +16,10 @@ export default function AIAssistant() {
               Voltar ao Onboarding
             </Button>
           </Link>
-          <h1 className="text-3xl font-heading font-normal text-foreground tracking-wide">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-heading font-normal text-foreground tracking-wide">
             Assistente de Estilo IA
           </h1>
-          <p className="text-muted-foreground mt-2">
+          <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mt-2 max-w-2xl">
             Sua consultora virtual está sempre disponível para te ajudar
           </p>
         </div>
