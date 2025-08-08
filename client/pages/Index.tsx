@@ -242,7 +242,7 @@ export default function Index() {
                     </div>
                     <div>
                       <p
-                        className={`text-sm font-medium ${
+                        className={`text-sm xl:text-base font-medium ${
                           isActive ? "text-foreground" : "text-muted-foreground"
                         }`}
                       >
