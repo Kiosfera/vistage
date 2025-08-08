@@ -134,7 +134,7 @@ export default function BehavioralForm({ onSubmit }: BehavioralFormProps) {
 
       {/* Personality Traits */}
       <div className="space-y-6">
-        <h4 className="text-lg font-medium">Traços de Personalidade</h4>
+        <h4 className="text-lg font-accent font-medium tracking-wide">Traços de Personalidade</h4>
         {personalityTraits.map((trait) => {
           const Icon = trait.icon;
           return (
