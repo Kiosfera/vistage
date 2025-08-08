@@ -137,13 +137,13 @@ export default function PreferencesForm({ onSubmit }: PreferencesFormProps) {
     selectedOccasions.length > 0;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8">
       <div className="text-center mb-6">
-        <Sparkles className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h3 className="text-xl font-accent font-medium mb-2 tracking-wide">
+        <Sparkles className="w-12 h-12 sm:w-16 sm:h-16 text-primary mx-auto mb-4" />
+        <h3 className="text-lg sm:text-xl font-accent font-medium mb-2 tracking-wide">
           Suas Preferências Estéticas
         </h3>
-        <p className="text-muted-foreground">
+        <p className="text-sm sm:text-base text-muted-foreground px-2">
           Nos conte sobre seu estilo pessoal para recomendações mais precisas
         </p>
       </div>
