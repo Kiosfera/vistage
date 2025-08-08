@@ -130,6 +130,8 @@ export default function Index() {
         return <BehavioralForm onSubmit={handleBehavioral} />;
       case 5:
         return <ResultsDisplay userData={userData} />;
+      case 6:
+        return <AIStyleAssistant userData={userData} />;
       default:
         return null;
     }
