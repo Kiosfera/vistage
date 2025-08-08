@@ -34,7 +34,7 @@ const steps = [
   },
   {
     id: 3,
-    title: "Prefer��ncias",
+    title: "Preferências",
     description: "Conte-nos sobre seu estilo pessoal",
     icon: Sparkles,
   },
@@ -162,7 +162,7 @@ export default function Index() {
               Passo {currentStep} de {steps.length}
             </span>
           </div>
-          <Progress value={progress} className="h-2" />
+          <Progress value={progress} className="h-2 sm:h-3" />
         </div>
 
         {/* Step Navigation */}
